@@ -16,6 +16,5 @@ namespace Lab4_2
         {
             InitializeComponent();
         }
-
     }
 }

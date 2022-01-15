@@ -57,6 +57,7 @@ namespace Lab4_2
             this.textBoxA.Name = "textBoxA";
             this.textBoxA.Size = new System.Drawing.Size(129, 23);
             this.textBoxA.TabIndex = 0;
+            this.textBoxA.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxA_KeyDown);
             // 
             // textBoxB
             // 
@@ -78,6 +79,7 @@ namespace Lab4_2
             this.numericA.Name = "numericA";
             this.numericA.Size = new System.Drawing.Size(129, 23);
             this.numericA.TabIndex = 3;
+            this.numericA.ValueChanged += new System.EventHandler(this.numericA_ValueChanged);
             // 
             // numericB
             // 
@@ -96,27 +98,31 @@ namespace Lab4_2
             // trackBarA
             // 
             this.trackBarA.Location = new System.Drawing.Point(65, 290);
+            this.trackBarA.Maximum = 100;
             this.trackBarA.Name = "trackBarA";
             this.trackBarA.Size = new System.Drawing.Size(129, 45);
             this.trackBarA.TabIndex = 6;
-            this.trackBarA.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.trackBarA.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarA.ValueChanged += new System.EventHandler(this.trackBarA_ValueChanged);
             // 
             // trackBarB
             // 
             this.trackBarB.Location = new System.Drawing.Point(317, 290);
+            this.trackBarB.Maximum = 100;
             this.trackBarB.Name = "trackBarB";
             this.trackBarB.Size = new System.Drawing.Size(129, 45);
             this.trackBarB.TabIndex = 7;
-            this.trackBarB.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.trackBarB.TickStyle = System.Windows.Forms.TickStyle.None;
             // 
             // trackBarC
             // 
             this.trackBarC.Location = new System.Drawing.Point(566, 290);
+            this.trackBarC.Maximum = 100;
             this.trackBarC.Name = "trackBarC";
             this.trackBarC.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.trackBarC.Size = new System.Drawing.Size(129, 45);
             this.trackBarC.TabIndex = 8;
-            this.trackBarC.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.trackBarC.TickStyle = System.Windows.Forms.TickStyle.None;
             // 
             // lbA
             // 

@@ -43,6 +43,9 @@ namespace Lab4_2
             this.lbC = new System.Windows.Forms.Label();
             this.lb1 = new System.Windows.Forms.Label();
             this.lb2 = new System.Windows.Forms.Label();
+            this.labelB = new System.Windows.Forms.Label();
+            this.labelA = new System.Windows.Forms.Label();
+            this.labelC = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericC)).BeginInit();
@@ -55,7 +58,7 @@ namespace Lab4_2
             // 
             this.textBoxA.Location = new System.Drawing.Point(65, 175);
             this.textBoxA.Name = "textBoxA";
-            this.textBoxA.Size = new System.Drawing.Size(129, 23);
+            this.textBoxA.Size = new System.Drawing.Size(130, 23);
             this.textBoxA.TabIndex = 0;
             this.textBoxA.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxA_KeyDown);
             // 
@@ -63,21 +66,23 @@ namespace Lab4_2
             // 
             this.textBoxB.Location = new System.Drawing.Point(317, 175);
             this.textBoxB.Name = "textBoxB";
-            this.textBoxB.Size = new System.Drawing.Size(129, 23);
+            this.textBoxB.Size = new System.Drawing.Size(130, 23);
             this.textBoxB.TabIndex = 1;
+            this.textBoxB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxB_KeyDown);
             // 
             // textBoxC
             // 
             this.textBoxC.Location = new System.Drawing.Point(566, 175);
             this.textBoxC.Name = "textBoxC";
-            this.textBoxC.Size = new System.Drawing.Size(129, 23);
+            this.textBoxC.Size = new System.Drawing.Size(130, 23);
             this.textBoxC.TabIndex = 2;
+            this.textBoxC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxC_KeyDown);
             // 
             // numericA
             // 
             this.numericA.Location = new System.Drawing.Point(65, 232);
             this.numericA.Name = "numericA";
-            this.numericA.Size = new System.Drawing.Size(129, 23);
+            this.numericA.Size = new System.Drawing.Size(130, 23);
             this.numericA.TabIndex = 3;
             this.numericA.ValueChanged += new System.EventHandler(this.numericA_ValueChanged);
             // 
@@ -85,34 +90,39 @@ namespace Lab4_2
             // 
             this.numericB.Location = new System.Drawing.Point(317, 232);
             this.numericB.Name = "numericB";
-            this.numericB.Size = new System.Drawing.Size(129, 23);
+            this.numericB.Size = new System.Drawing.Size(130, 23);
             this.numericB.TabIndex = 4;
+            this.numericB.ValueChanged += new System.EventHandler(this.numericB_ValueChanged);
             // 
             // numericC
             // 
             this.numericC.Location = new System.Drawing.Point(566, 232);
             this.numericC.Name = "numericC";
-            this.numericC.Size = new System.Drawing.Size(129, 23);
+            this.numericC.Size = new System.Drawing.Size(130, 23);
             this.numericC.TabIndex = 5;
+            this.numericC.ValueChanged += new System.EventHandler(this.numericC_ValueChanged);
             // 
             // trackBarA
             // 
             this.trackBarA.Location = new System.Drawing.Point(65, 290);
             this.trackBarA.Maximum = 100;
             this.trackBarA.Name = "trackBarA";
-            this.trackBarA.Size = new System.Drawing.Size(129, 45);
+            this.trackBarA.Size = new System.Drawing.Size(130, 45);
             this.trackBarA.TabIndex = 6;
             this.trackBarA.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBarA.ValueChanged += new System.EventHandler(this.trackBarA_ValueChanged);
+            this.trackBarA.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBarA_MouseUp);
             // 
             // trackBarB
             // 
             this.trackBarB.Location = new System.Drawing.Point(317, 290);
             this.trackBarB.Maximum = 100;
             this.trackBarB.Name = "trackBarB";
-            this.trackBarB.Size = new System.Drawing.Size(129, 45);
+            this.trackBarB.Size = new System.Drawing.Size(130, 45);
             this.trackBarB.TabIndex = 7;
             this.trackBarB.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarB.ValueChanged += new System.EventHandler(this.trackBarB_ValueChanged);
+            this.trackBarB.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBarB_MouseUp);
             // 
             // trackBarC
             // 
@@ -120,9 +130,11 @@ namespace Lab4_2
             this.trackBarC.Maximum = 100;
             this.trackBarC.Name = "trackBarC";
             this.trackBarC.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.trackBarC.Size = new System.Drawing.Size(129, 45);
+            this.trackBarC.Size = new System.Drawing.Size(130, 45);
             this.trackBarC.TabIndex = 8;
             this.trackBarC.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBarC.ValueChanged += new System.EventHandler(this.trackBarC_ValueChanged);
+            this.trackBarC.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBarC_MouseUp);
             // 
             // lbA
             // 
@@ -174,11 +186,41 @@ namespace Lab4_2
             this.lb2.TabIndex = 13;
             this.lb2.Text = "<=";
             // 
+            // labelB
+            // 
+            this.labelB.AutoSize = true;
+            this.labelB.Location = new System.Drawing.Point(377, 329);
+            this.labelB.Name = "labelB";
+            this.labelB.Size = new System.Drawing.Size(10, 15);
+            this.labelB.TabIndex = 14;
+            this.labelB.Text = ".";
+            // 
+            // labelA
+            // 
+            this.labelA.AutoSize = true;
+            this.labelA.Location = new System.Drawing.Point(120, 329);
+            this.labelA.Name = "labelA";
+            this.labelA.Size = new System.Drawing.Size(10, 15);
+            this.labelA.TabIndex = 15;
+            this.labelA.Text = ".";
+            // 
+            // labelC
+            // 
+            this.labelC.AutoSize = true;
+            this.labelC.Location = new System.Drawing.Point(626, 329);
+            this.labelC.Name = "labelC";
+            this.labelC.Size = new System.Drawing.Size(10, 15);
+            this.labelC.TabIndex = 16;
+            this.labelC.Text = ".";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 379);
+            this.Controls.Add(this.labelC);
+            this.Controls.Add(this.labelA);
+            this.Controls.Add(this.labelB);
             this.Controls.Add(this.lb2);
             this.Controls.Add(this.lb1);
             this.Controls.Add(this.lbC);
@@ -195,6 +237,7 @@ namespace Lab4_2
             this.Controls.Add(this.textBoxA);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericC)).EndInit();
@@ -222,6 +265,9 @@ namespace Lab4_2
         private System.Windows.Forms.Label lbC;
         private System.Windows.Forms.Label lb1;
         private System.Windows.Forms.Label lb2;
+        private System.Windows.Forms.Label labelB;
+        private System.Windows.Forms.Label labelA;
+        private System.Windows.Forms.Label labelC;
     }
 }
 

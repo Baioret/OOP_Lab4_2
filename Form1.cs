@@ -37,7 +37,6 @@ namespace Lab4_2
             trackBarC.Value = model.getValueC();
         }
 
-
         private void textBoxA_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -91,7 +90,9 @@ namespace Lab4_2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            model.setValueA(App.Default.ValueA);
+            model.setValueC(App.Default.ValueC);
+            model.setValueB(App.Default.ValueB);
         }
 
 
@@ -109,6 +110,15 @@ namespace Lab4_2
         {
             labelC.Text = trackBarC.Value.ToString();
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            App.Default.ValueA = model.getValueA();
+            App.Default.ValueB = model.getValueB();
+            App.Default.ValueC = model.getValueC();
+
+            App.Default.Save();
+        }
     }
 
     public class Model
@@ -117,7 +127,7 @@ namespace Lab4_2
         private int B;
         private int C;
 
-        public System.EventHandler observers;
+        public EventHandler observers;
 
         public void setValueA(int value)
         {
